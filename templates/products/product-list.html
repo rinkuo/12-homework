@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Mahsulotlar Ro'yxati{% endblock %}
+
+{% block content %}
+<h1>Mahsulotlar</h1>
+<ul class="list-group">
+    {% for product in products %}
+    <li class="list-group-item">
+        <a href="{{ product.get_detail_url }}">{{ product.product_name }}</a> - {{ product.price }} UZS
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

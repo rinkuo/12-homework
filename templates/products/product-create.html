@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Yangi Mahsulot Yaratish{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Yangi Mahsulot Qo'shish</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="product_name" class="form-label">Mahsulot nomi</label>
+            <input type="text" name="product_name" class="form-control" id="product_name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Ta'rif</label>
+            <textarea name="description" class="form-control" id="description" rows="4" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Narx</label>
+            <input type="number" name="price" class="form-control" id="price" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Rasm</label>
+            <input type="file" name="image" class="form-control" id="image" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Kategoriya</label>
+            <input type="text" name="category" class="form-control" id="category" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Mahsulotni Yaratish</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Mahsulot Tafsiloti{% endblock %}
+
+{% block content %}
+<h1>{{ product.product_name }}</h1>
+<img src="{{ product.image.url }}" alt="{{ product.product_name }}" class="img-fluid">
+<p>{{ product.description }}</p>
+<p>Narx: {{ product.price }} UZS</p>
+<p>Kategoriya: {{ product.category }}</p>
+{% endblock %}
